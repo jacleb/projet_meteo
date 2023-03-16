@@ -1,0 +1,178 @@
+body {
+    background-image: url("../media/ciel.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(36, 40, 60);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+#app[v-cloak] {
+    display: none;
+}
+
+#app {
+    background-color: rgba(212, 232, 246, 0.75);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+    min-width: 30%;
+    padding: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+
+    .retour {
+        display: flex;
+        justify-content: left;
+        margin: 20px 0px 0px 20px;
+
+        a {
+            text-decoration: none;
+            color: white;
+            background-color: rgb(65, 77, 142);
+            border-radius: 10px;
+            padding: 10px 12px;
+
+            &:hover {
+                color: gray;
+            }
+        }
+    }
+
+    h1 {
+        font-size: 44px;
+        font-weight: 200;
+        margin-top: 10px;
+    }
+
+    .div_formulaire {
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60%;
+            margin: auto;
+            margin-bottom: 10px;
+
+            .input_ville {
+                max-width: 85%;
+            }
+
+            .input_pays {
+                margin-left: 5px;
+                max-width: 15%;
+            }
+
+            .input_ville,
+            .input_pays,
+            .bouton {
+                background-color: white;
+                border: 1px solid gray;
+                box-sizing: border-box;
+                height: 30px;
+
+                &:focus {
+                    outline: none;
+                    border: 1.5px solid gray;
+                }
+            }
+
+            .bouton {
+                align-self: center;
+                margin-left: 10px;
+
+                &:hover {
+                    background-color: rgb(200, 200, 200);
+                }
+            }
+        }
+
+        .erreur {
+            color: red;
+        }
+    }
+
+    .div_resultat {
+        width: 100%;
+
+        h2 {
+            margin: 0px;
+        }
+
+        .meteo {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            .temperature {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+
+                div:first-child {
+                    width: 50%;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+
+                .temp {
+                    width: 50%;
+                    margin-left: 5px;
+                    text-align: start;
+                    justify-content: start;
+
+                    h3 {
+                        margin: 0px;
+                    }
+
+                    h4 {
+                        color: gray;
+                        font-weight: 100;
+                        width: 100%;
+                        margin: 0px;
+                    }
+                }
+            }
+
+            .details {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+
+                div {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    justify-content: center;
+                    width: 100%;
+
+                    .detail {
+                        text-align: right;
+                    }
+
+                    .detail_resultat {
+                        text-align: left;
+                    }
+
+                    .detail,
+                    .detail_resultat {
+                        width: 40%;
+                        margin: 10px 5px 0px;
+                    }
+
+                }
+            }
+        }
+    }
+}

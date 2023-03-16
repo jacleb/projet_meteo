@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Météo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="app" v-cloak>
+
+        <div class="div_formulaire" v-if="page =='accueil'">
+            <h1>Météo</h1>
+
+            <form action="#" name="meteo" @submit.prevent="envoyerInformations()">
+                <input type="text" v-model="ville" class="input_ville" placeholder="Ville" required>
+                <input type="text" v-model="pays" class="input_pays" placeholder="CA" required>
+                <input type="submit" class="bouton" value="Envoyer">
+            </form>
+
+            <p class="erreur" v-if="erreur == true">Erreur! Veuillez entrer une ville et un pays valide.</p>
+        </div>
+
+        <div class="div_resultat" v-if="page =='meteo'">
+            <div class="retour">
+                <a href="#" @click.prevent="changerPage">Retour</a>
+            </div>
+
+            <h1>Météo</h1>
+
+            <div>
+                <h2>{{ meteo.endroit_recherche }}</h2>
+
+                <div class="meteo">
+                    <div class="temperature">
+                        <div>
+                            <img :src="meteo.url_icone" alt="Icône représentant la température actuelle">
+                        </div>
+
+                        <div class="temp">
+                            <h3>{{ meteo.temperature }}°C</h3>
+                            <h4>{{ meteo.temperature_ressentie }}°C ressenti</h4>
+                        </div>
+                    </div>
+
+                    <div class="details">
+                        <div>
+                            <p class="detail">Condition: </p>
+                            <p class="detail_resultat">{{ meteo.description }}</p>
+                        </div>
+
+                        <div>
+                            <p class="detail">Vent: </p>
+                            <p class="detail_resultat">{{ meteo.vent }}</p>
+                        </div>
+
+                        <div>
+                            <p class="detail">Lever du soleil: </p>
+                            <p class="detail_resultat">{{ meteo.lever_du_soleil }}</p>
+                        </div>
+
+                        <div>
+                            <p class="detail">Couché du soleil: </p>
+                            <p class="detail_resultat">{{ meteo.coucher_du_soleil }}</p>
+                        </div>
+
+                        <div>
+                            <p class="detail">Fuseau horaire: </p>
+                            <p class="detail_resultat">{{ meteo.fuseau_horaire }}h</p>
+                        </div>
+
+                        <div v-if="neige == true">
+                            <p class="detail">Chute de neige: </p>
+                            <p class="detail_resultat">{{ meteo.quantite_neige }}mm</p>
+                        </div>
+
+                        <div v-if="pluie == true">
+                            <p class="detail">Précipitation de pluie: </p>
+                            <p class="detail_resultat">{{ meteo.quantite_pluie }}mm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/main.js" type="module"></script>
+</body>
+
+</html>

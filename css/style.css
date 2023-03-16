@@ -1,0 +1,151 @@
+body {
+  background-image: url("../media/ciel.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(36, 40, 60);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+}
+
+#app[v-cloak] {
+  display: none;
+}
+
+#app {
+  background-color: rgba(212, 232, 246, 0.75);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 50%;
+  min-width: 30%;
+  padding: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+#app .retour {
+  display: flex;
+  justify-content: left;
+  margin: 20px 0px 0px 20px;
+}
+#app .retour a {
+  text-decoration: none;
+  color: white;
+  background-color: rgb(65, 77, 142);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+#app .retour a:hover {
+  color: gray;
+}
+#app h1 {
+  font-size: 44px;
+  font-weight: 200;
+  margin-top: 10px;
+}
+#app .div_formulaire form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+#app .div_formulaire form .input_ville {
+  max-width: 85%;
+}
+#app .div_formulaire form .input_pays {
+  margin-left: 5px;
+  max-width: 15%;
+}
+#app .div_formulaire form .input_ville,
+#app .div_formulaire form .input_pays,
+#app .div_formulaire form .bouton {
+  background-color: white;
+  border: 1px solid gray;
+  box-sizing: border-box;
+  height: 30px;
+}
+#app .div_formulaire form .input_ville:focus,
+#app .div_formulaire form .input_pays:focus,
+#app .div_formulaire form .bouton:focus {
+  outline: none;
+  border: 1.5px solid gray;
+}
+#app .div_formulaire form .bouton {
+  align-self: center;
+  margin-left: 10px;
+}
+#app .div_formulaire form .bouton:hover {
+  background-color: rgb(200, 200, 200);
+}
+#app .div_formulaire .erreur {
+  color: red;
+}
+#app .div_resultat {
+  width: 100%;
+}
+#app .div_resultat h2 {
+  margin: 0px;
+}
+#app .div_resultat .meteo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#app .div_resultat .meteo .temperature {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+#app .div_resultat .meteo .temperature div:first-child {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+#app .div_resultat .meteo .temperature .temp {
+  width: 50%;
+  margin-left: 5px;
+  text-align: start;
+  justify-content: start;
+}
+#app .div_resultat .meteo .temperature .temp h3 {
+  margin: 0px;
+}
+#app .div_resultat .meteo .temperature .temp h4 {
+  color: gray;
+  font-weight: 100;
+  width: 100%;
+  margin: 0px;
+}
+#app .div_resultat .meteo .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+#app .div_resultat .meteo .details div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+#app .div_resultat .meteo .details div .detail {
+  text-align: right;
+}
+#app .div_resultat .meteo .details div .detail_resultat {
+  text-align: left;
+}
+#app .div_resultat .meteo .details div .detail,
+#app .div_resultat .meteo .details div .detail_resultat {
+  width: 40%;
+  margin: 10px 5px 0px;
+}/*# sourceMappingURL=style.css.map */
